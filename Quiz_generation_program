@@ -1758,7 +1758,7 @@ else:
             total += length
             if total > 6800:
                index_list.append(i)
-               total = 0
+               total =  i[line_lengths]
         print(index_list)
         print(line_lengths)
         print(lines)
