@@ -969,7 +969,7 @@ else:
     
     # 合計トークン数を16000トークンに制限
     import unicodedata
-    
+
     if genre.count("\n") + 1 == 4:
         text_all = genre_top_result
         lines = text_all.replace('\n', '').replace("。", "。\n").replace(".",".\n").split('\n')
@@ -979,25 +979,25 @@ else:
     
         tokens_all = tokenizer.tokenize(texts)
     
-        if len(tokens_all) > 5330:
+        if len(tokens_all) > 8000:
             line_lengths = [len(tokenizer.tokenize(line)) for line in lines]
             total = 0
             index_list = []
             for i, length in enumerate(line_lengths):
                 total += length
-                if total > 5330:
+                if total > 8000:
                     index_list.append(i)
                     total = 0
     
             for i in range(len(index_list)):
-                over_5330 = index_list[i]
+                over_8000 = index_list[i]
                 if i == 0:
-                    first_group_end = over_5330
+                    first_group_end = over_8000
                     first_group_lines = lines[0 : first_group_end]
-                    genre_top_group_text_5330 = '\n'.join(first_group_lines)
+                    genre_top_group_text_8000 = '\n'.join(first_group_lines)
     
         else:
-            genre_top_group_text_5330 = texts
+            genre_top_group_text_8000 = texts
     
         text_all = wiki_top_result
         lines = text_all.replace('\n', '').replace("。", "。\n").replace(".",".\n").split('\n')
@@ -1005,26 +1005,26 @@ else:
         texts = " " .join(lines)
         tokens_all = tokenizer.tokenize(texts)
     
-        if len(tokens_all) > 5330:
+        if len(tokens_all) > 8000:
             line_lengths = [len(tokenizer.tokenize(line)) for line in lines]
             total = 0
             index_list = []
             for i, length in enumerate(line_lengths):
                 total += length
-                if total > 5330:
+                if total > 8000:
                     index_list.append(i)
                     total = 0
     
             for i in range(len(index_list)):
-                over_5330 = index_list[i]
+                over_8000 = index_list[i]
                 if i == 0:
-                    first_group_end = over_5330
+                    first_group_end = over_8000
                     first_group_lines = lines[0 : first_group_end]
-                    wiki_top_group_text_5330 = '\n'.join(first_group_lines)
+                    wiki_top_group_text_8000 = '\n'.join(first_group_lines)
     
         else:
-            wiki_top_group_text_5330 = texts
-    
+            wiki_top_group_text_8000 = texts
+
     if genre.count("\n") + 1 == 8 or genre.count("\n") + 1 ==9:
         text_all = genre_1_top_result
         lines = text_all.replace('\n', '').replace("。", "。\n").replace(".",".\n").split('\n')
