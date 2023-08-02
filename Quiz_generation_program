@@ -211,7 +211,7 @@ if os.path.exists("test.txt"):
 
         match = re.search(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}" + f',{re.escape(topic)}\n始め\n(.*)\n{re.escape(topic)}\n終わり', content, re.DOTALL)
         if match:
-            all_data = match.group(1)
+            all_data = match.group(0)
 
             # トークン数で行ごとに分割
             text_all = all_data
