@@ -234,10 +234,7 @@ if os.path.exists("test.txt"):
                     total += length
                     if total > 6800:
                         index_list.append(i)
-                        total = 0
-                print(index_list)
-                print(line_lengths)
-                print(lines)
+                        total = line_lengths[i]
 
             else:
                 index_list = []
@@ -791,17 +788,17 @@ else:
         text = documents[i]
         tokens_all = tokenizer.tokenize(text)
         if len(tokens_all) <= 1000:
-            score -= 0.16
-            relevance_scores[i] -= 0.16
+            score -= 0.12
+            relevance_scores[i] -= 0.12
         elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
         elif 4530 < len(tokens_all) <= 5830:
-            score += 0.08
-            relevance_scores[i] += 0.08
+            score += 0.06
+            relevance_scores[i] += 0.06
         elif len(tokens_all) >= 7000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
 
         print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -833,17 +830,17 @@ else:
         text = documents[i]
         tokens_all = tokenizer.tokenize(text)
         if len(tokens_all) <= 1000:
-            score -= 0.16
-            relevance_scores[i] -= 0.16
+            score -= 0.12
+            relevance_scores[i] -= 0.12
         elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
         elif 4530 < len(tokens_all) <= 5830:
-            score += 0.08
-            relevance_scores[i] += 0.08
+            score += 0.06
+            relevance_scores[i] += 0.06
         elif len(tokens_all) >= 7000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
 
         print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -884,17 +881,17 @@ else:
         text = documents[i]
         tokens_all = tokenizer.tokenize(text)
         if len(tokens_all) <= 1000:
-            score -= 0.16
-            relevance_scores[i] -= 0.16
+            score -= 0.12
+            relevance_scores[i] -= 0.12
         elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
         elif 4530 < len(tokens_all) <= 5830:
-            score += 0.08
-            relevance_scores[i] += 0.08
+            score += 0.06
+            relevance_scores[i] += 0.06
         elif len(tokens_all) >= 7000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
 
         print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -933,17 +930,17 @@ else:
         text = documents[i]
         tokens_all = tokenizer.tokenize(text)
         if len(tokens_all) <= 1000:
-            score -= 0.16
-            relevance_scores[i] -= 0.16
+            score -= 0.12
+            relevance_scores[i] -= 0.12
         elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
         elif 4530 < len(tokens_all) <= 5830:
-            score += 0.08
-            relevance_scores[i] += 0.08
+            score += 0.06
+            relevance_scores[i] += 0.06
         elif len(tokens_all) >= 7000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
 
         print(f"Webサイト {i + 1} の適合率: {score:.2f}")        
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -972,17 +969,17 @@ else:
         text = documents[i]
         tokens_all = tokenizer.tokenize(text)
         if len(tokens_all) <= 1000:
-            score -= 0.16
-            relevance_scores[i] -= 0.16
+            score -= 0.12
+            relevance_scores[i] -= 0.12
         elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
         elif 4530 < len(tokens_all) <= 5830:
-            score += 0.08
-            relevance_scores[i] += 0.08
+            score += 0.06
+            relevance_scores[i] += 0.06
         elif len(tokens_all) >= 7000:
-            score -= 0.08
-            relevance_scores[i] -= 0.08
+            score -= 0.06
+            relevance_scores[i] -= 0.06
 
         print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1011,8 +1008,8 @@ else:
                 total += length
                 if total > 8000:
                     index_list.append(i)
-                    total = 0
-    
+                    total = line_lengths[i]
+
             for i in range(len(index_list)):
                 over_8000 = index_list[i]
                 if i == 0:
@@ -1037,8 +1034,8 @@ else:
                 total += length
                 if total > 8000:
                     index_list.append(i)
-                    total = 0
-    
+                    total = line_lengths[i]
+
             for i in range(len(index_list)):
                 over_8000 = index_list[i]
                 if i == 0:
@@ -1064,8 +1061,8 @@ else:
                 total += length
                 if total > 5330:
                     index_list.append(i)
-                    total = 0
-    
+                    total = line_lengths[i]
+
             for i in range(len(index_list)):
                 over_5330 = index_list[i]
                 if i == 0:
@@ -1090,8 +1087,8 @@ else:
                 total += length
                 if total > 5330:
                     index_list.append(i)
-                    total = 0
-    
+                    total = line_lengths[i]
+
             for i in range(len(index_list)):
                 over_5330 = index_list[i]
                 if i == 0:
@@ -1116,8 +1113,8 @@ else:
                 total += length
                 if total > 0:
                     index_list.append(i)
-                    total = 0
-    
+                    total = line_lengths[i]
+
             for i in range(len(index_list)):
                 over_5330 = index_list[i]
                 if i == 0:
@@ -1130,7 +1127,7 @@ else:
     
     # データの結合
     if genre.count("\n") + 1 == 4:
-        subkey10_data = genre_top_group_text_5330 + wiki_top_group_text_5330
+        subkey10_data = genre_top_group_text_8000 + wiki_top_group_text_8000
     elif genre.count("\n") + 1 == 8 or genre.count("\n") + 1 ==9:
         subkey10_data = genre_1_top_group_text_5330 + genre_2_top_group_text_5330 + wiki_top_group_text_5330
     
@@ -1176,8 +1173,7 @@ else:
     
     
     subkey10 = chain.run({"topic":f"{topic}", "subkey10_data":f"{subkey10_data}"})
-    subkey10 = subkey10.replace("- ", "").replace("・","")
-    print(subkey10)
+    subkey10 = subkey10.replace("- ", "").replace("・","").replace("1.","").replace("2.","").replace("3.","").replace("4.","").replace("5.","").replace("6.","").replace("7.","").replace("8.","").replace("9.","").replace("10.","")    print(subkey10)
     
     
     # キーワードを取り出すために行ごとに分割
@@ -1214,17 +1210,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1265,17 +1261,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1316,17 +1312,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1367,17 +1363,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1418,17 +1414,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1469,17 +1465,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1520,17 +1516,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1571,17 +1567,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1622,17 +1618,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1673,17 +1669,17 @@ else:
                 text = documents[i]
                 tokens_all = tokenizer.tokenize(text)
                 if len(tokens_all) <= 1000:
-                    score -= 0.16
-                    relevance_scores[i] -= 0.16
+                    score -= 0.12
+                    relevance_scores[i] -= 0.12
                 elif 1000 < len(tokens_all) <= 3000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 elif 6000 < len(tokens_all) <= 7300:
-                    score += 0.08
-                    relevance_scores[i] += 0.08
+                    score += 0.06
+                    relevance_scores[i] += 0.06
                 elif len(tokens_all) >= 10000:
-                    score -= 0.08
-                    relevance_scores[i] -= 0.08
+                    score -= 0.06
+                    relevance_scores[i] -= 0.06
                 print(f"Webサイト {i + 1} の適合率: {score:.2f}")
     
             top_1_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
@@ -1782,10 +1778,7 @@ else:
             total += length
             if total > 6800:
                index_list.append(i)
-               total =  i[line_lengths]
-        print(index_list)
-        print(line_lengths)
-        print(lines)
+               total =  line_lengths[i]
     
     else:
         index_list = []
