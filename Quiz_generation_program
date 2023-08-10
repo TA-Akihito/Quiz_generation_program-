@@ -1173,7 +1173,8 @@ else:
     
     
     subkey10 = chain.run({"topic":f"{topic}", "subkey10_data":f"{subkey10_data}"})
-    subkey10 = subkey10.replace("- ", "").replace("・","").replace("1.","").replace("2.","").replace("3.","").replace("4.","").replace("5.","").replace("6.","").replace("7.","").replace("8.","").replace("9.","").replace("10.","")    print(subkey10)
+    subkey10 = subkey10.replace("- ", "").replace("・","").replace("1.","").replace("2.","").replace("3.","").replace("4.","").replace("5.","").replace("6.","").replace("7.","").replace("8.","").replace("9.","").replace("10.","")    
+    print(subkey10)
     
     
     # キーワードを取り出すために行ごとに分割
