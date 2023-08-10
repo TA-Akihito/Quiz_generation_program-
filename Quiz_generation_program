@@ -784,23 +784,23 @@ else:
                 relevance_scores[i] = 0
     
         for i, score in enumerate(relevance_scores):
-        #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
-        text = documents[i]
-        tokens_all = tokenizer.tokenize(text)
-        if len(tokens_all) <= 1000:
-            score -= 0.12
-            relevance_scores[i] -= 0.12
-        elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-        elif 4530 < len(tokens_all) <= 5830:
-            score += 0.06
-            relevance_scores[i] += 0.06
-        elif len(tokens_all) >= 7000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
+            #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
+            text = documents[i]
+            tokens_all = tokenizer.tokenize(text)
+            if len(tokens_all) <= 1000:
+                score -= 0.12
+                relevance_scores[i] -= 0.12
+            elif 1000 < len(tokens_all) <= 3000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+            elif 4530 < len(tokens_all) <= 5830:
+                score += 0.06
+                relevance_scores[i] += 0.06
+            elif len(tokens_all) >= 7000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
 
-        print(f"Webサイト {i + 1} の適合率: {score:.2f}")
+            print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
         genre_top_result = [documents[i] for i in top_2_indices if relevance_scores[i] >= 0.3]
         genre_top_result = " " .join(genre_top_result)
@@ -826,23 +826,23 @@ else:
                 relevance_scores[i] = 100
     
         for i, score in enumerate(relevance_scores):
-        #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
-        text = documents[i]
-        tokens_all = tokenizer.tokenize(text)
-        if len(tokens_all) <= 1000:
-            score -= 0.12
-            relevance_scores[i] -= 0.12
-        elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-        elif 4530 < len(tokens_all) <= 5830:
-            score += 0.06
-            relevance_scores[i] += 0.06
-        elif len(tokens_all) >= 7000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-
-        print(f"Webサイト {i + 1} の適合率: {score:.2f}")
+            #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
+            text = documents[i]
+            tokens_all = tokenizer.tokenize(text)
+            if len(tokens_all) <= 1000:
+                score -= 0.12
+                relevance_scores[i] -= 0.12
+            elif 1000 < len(tokens_all) <= 3000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+            elif 4530 < len(tokens_all) <= 5830:
+                score += 0.06
+                relevance_scores[i] += 0.06
+            elif len(tokens_all) >= 7000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+    
+            print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
         wiki_top_result = [documents[i] for i in top_2_indices if relevance_scores[i] >= 0.3]
         wiki_top_result = " " .join(wiki_top_result)
@@ -877,23 +877,23 @@ else:
                 relevance_scores[i] = 0
     
         for i, score in enumerate(relevance_scores):
-        #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
-        text = documents[i]
-        tokens_all = tokenizer.tokenize(text)
-        if len(tokens_all) <= 1000:
-            score -= 0.12
-            relevance_scores[i] -= 0.12
-        elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-        elif 4530 < len(tokens_all) <= 5830:
-            score += 0.06
-            relevance_scores[i] += 0.06
-        elif len(tokens_all) >= 7000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-
-        print(f"Webサイト {i + 1} の適合率: {score:.2f}")
+            #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
+            text = documents[i]
+            tokens_all = tokenizer.tokenize(text)
+            if len(tokens_all) <= 1000:
+                score -= 0.12
+                relevance_scores[i] -= 0.12
+            elif 1000 < len(tokens_all) <= 3000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+            elif 4530 < len(tokens_all) <= 5830:
+                score += 0.06
+                relevance_scores[i] += 0.06
+            elif len(tokens_all) >= 7000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+    
+            print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
         genre_1_top_result = [documents[i] for i in top_2_indices if relevance_scores[i] >= 0.3]
         genre_1_top_result = " " .join(genre_1_top_result)
@@ -926,23 +926,23 @@ else:
                 relevance_scores[i] = 0
     
         for i, score in enumerate(relevance_scores):
-        #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
-        text = documents[i]
-        tokens_all = tokenizer.tokenize(text)
-        if len(tokens_all) <= 1000:
-            score -= 0.12
-            relevance_scores[i] -= 0.12
-        elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-        elif 4530 < len(tokens_all) <= 5830:
-            score += 0.06
-            relevance_scores[i] += 0.06
-        elif len(tokens_all) >= 7000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-
-        print(f"Webサイト {i + 1} の適合率: {score:.2f}")        
+            #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
+            text = documents[i]
+            tokens_all = tokenizer.tokenize(text)
+            if len(tokens_all) <= 1000:
+                score -= 0.12
+                relevance_scores[i] -= 0.12
+            elif 1000 < len(tokens_all) <= 3000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+            elif 4530 < len(tokens_all) <= 5830:
+                score += 0.06
+                relevance_scores[i] += 0.06
+            elif len(tokens_all) >= 7000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+    
+            print(f"Webサイト {i + 1} の適合率: {score:.2f}")        
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
         genre_2_top_result = [documents[i] for i in top_2_indices if relevance_scores[i] >= 0.3]
         genre_2_top_result = " ".join(genre_2_top_result)
@@ -965,23 +965,23 @@ else:
                 relevance_scores[i] = 100
     
         for i, score in enumerate(relevance_scores):
-        #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
-        text = documents[i]
-        tokens_all = tokenizer.tokenize(text)
-        if len(tokens_all) <= 1000:
-            score -= 0.12
-            relevance_scores[i] -= 0.12
-        elif 1000 < len(tokens_all) <= 3000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-        elif 4530 < len(tokens_all) <= 5830:
-            score += 0.06
-            relevance_scores[i] += 0.06
-        elif len(tokens_all) >= 7000:
-            score -= 0.06
-            relevance_scores[i] -= 0.06
-
-        print(f"Webサイト {i + 1} の適合率: {score:.2f}")
+            #テキスト量が少なすぎる/多すぎるサイトを冷遇し、5330トークン付近のテキスト量のサイトを優遇する
+            text = documents[i]
+            tokens_all = tokenizer.tokenize(text)
+            if len(tokens_all) <= 1000:
+                score -= 0.12
+                relevance_scores[i] -= 0.12
+            elif 1000 < len(tokens_all) <= 3000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+            elif 4530 < len(tokens_all) <= 5830:
+                score += 0.06
+                relevance_scores[i] += 0.06
+            elif len(tokens_all) >= 7000:
+                score -= 0.06
+                relevance_scores[i] -= 0.06
+    
+            print(f"Webサイト {i + 1} の適合率: {score:.2f}")
         top_2_indices = sorted(range(len(relevance_scores)), key=lambda i: relevance_scores[i], reverse=True)[:1]
         wiki_top_result = [documents[i] for i in top_2_indices if relevance_scores[i] >= 0.3]
         wiki_top_result = " " .join(wiki_top_result)
