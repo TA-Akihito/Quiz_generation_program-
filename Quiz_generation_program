@@ -36,19 +36,19 @@ from langchain import LLMChain, PromptTemplate
 
 
 # GPT3.5&4のAPIシークレットキー
-SECRET_KEY  = "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"
+SECRET_KEY  = ""
 
 # API認証情報設定
 os.environ["OPENAI_API_KEY"] = SECRET_KEY
 
 # GPT3.5&4のAPIシークレットキー
-openai.api_key = "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"
+openai.api_key = ""
 
 #Google Search APIのシークレットキー
-api_key = "AIzaSyB0Ohkj5jw_KbuJZtjTKBXTzQrNeWeRrcI"
+api_key = ""
 
 #カスタム検索エンジンID
-cx = "57b4ff8de066b4104"
+cx = ""
 
 
 # Google Search APIを実行する関数
