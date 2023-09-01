@@ -3273,7 +3273,6 @@ else:
         if len(subkey10_lines)==10:
             all_data = genre_1_top_result + genre_2_top_result + wiki_top_result + subkey10_1_data + subkey10_2_data + subkey10_3_data + subkey10_4_data + subkey10_5_data + subkey10_6_data + subkey10_7_data + subkey10_8_data + subkey10_9_data + subkey10_10_data
 
-    print(all_data)
 
 
     # ファイルに書き込んで保存
