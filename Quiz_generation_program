@@ -1126,7 +1126,7 @@ if os.path.exists("test.txt"):
             # データの結合
             if genre.count("\n") + 1 == 4:
                 subkey10_data = genre_top_group_text_8000 + wiki_top_group_text_8000
-            elif genre.count("\n") + 1 == 8 or genre.count("\n") + 1 ==9:
+            else:
                 subkey10_data = genre_1_top_group_text_5330 + genre_2_top_group_text_5330 + wiki_top_group_text_5330
 
 
@@ -2664,7 +2664,7 @@ else:
     # データの結合
     if genre.count("\n") + 1 == 4:
         subkey10_data = genre_top_group_text_8000 + wiki_top_group_text_8000
-    elif genre.count("\n") + 1 == 8 or genre.count("\n") + 1 ==9:
+    else:
         subkey10_data = genre_1_top_group_text_5330 + genre_2_top_group_text_5330 + wiki_top_group_text_5330
 
 
